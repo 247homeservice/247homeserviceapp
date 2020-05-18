@@ -1,0 +1,8 @@
+{
+  "name": "homeServiceApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

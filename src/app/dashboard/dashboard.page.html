@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>24/7 HomeService</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-searchbar value="Qual Serviço você deseja?"></ion-searchbar>
+
+  <ion-chip>
+    <ion-icon name="construct" color="primary"></ion-icon>
+    <ion-label>Obras e Reparos</ion-label>
+    <ion-icon ></ion-icon>
+  </ion-chip>
+
+  <ion-chip>
+    <ion-icon name="flower" color="primary"></ion-icon>
+    <ion-label>Jardinagem</ion-label>
+    <ion-icon ></ion-icon>
+  </ion-chip>
+
+  <ion-chip>
+    <ion-icon name="speedometer" color="primary"></ion-icon>
+    <ion-label>Eletrônico e Elétrica</ion-label>
+    <ion-icon ></ion-icon>
+  </ion-chip>
+
+  <ion-chip>
+    <ion-icon name="build" color="primary"></ion-icon>
+    <ion-label>Manutenção</ion-label>
+    <ion-icon ></ion-icon>
+  </ion-chip>
+
+  <ion-segment scrollable value="heart">
+    <ion-segment-button value="home">
+      <ion-icon name="pin"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      <ion-icon name="star"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-icon name="cart"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Filtro
+      </ion-label>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-label>Categorias</ion-label>
+      <ion-select multiple="true" cancelText="Não" okText="Okay!">
+        <ion-select-option value="construct">Obras e Reparos</ion-select-option>
+        <ion-select-option value="flower">Jardinagem</ion-select-option>
+        <ion-select-option value="speedometer">Eletrônico e Elétrica</ion-select-option>
+        <ion-select-option value="build">Manutenção</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="warning" >
+      <ion-icon name="at"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning" >
+      <ion-icon name="chatbubbles"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card *ngFor="let request of list">
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img ></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{ request.name }}</ion-label>
+    </ion-item>  
+    <ion-card-content>
+      <ion-item>
+        {{ request.categoriesCare }}
+      </ion-item>
+      <ion-item>
+        {{ request.description }}
+      </ion-item>
+      <ion-item>
+        {{ request.address }}
+      </ion-item>
+
+      <ion-item>
+        <ion-button  size="small">
+          <ion-icon slot="start" name="location-outline"></ion-icon>
+          Local
+        </ion-button>
+        <ion-button  size="small">
+          <ion-icon slot="start" name="call-outline"></ion-icon>
+          Fone
+        </ion-button>
+        <ion-button  size="small">
+          <ion-icon slot="start" name="at-outline"></ion-icon>
+          e-mail
+        </ion-button>
+        <ion-button  size="small">
+          <ion-icon slot="start" name="aperture-outline"></ion-icon>
+          fotos
+        </ion-button>
+      </ion-item>
+    
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="list.length === 0">
+    <ion-card-content>
+      Sem registros por enquanto
+    </ion-card-content>
+  </ion-card>
+</ion-content>
