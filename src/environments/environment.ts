@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: 'http://247homeservice-com-br.umbler.net'
+  url_api: 'http://localhost:8080'
 };
 
 /*
