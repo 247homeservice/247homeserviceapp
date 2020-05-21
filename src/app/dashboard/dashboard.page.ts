@@ -7,7 +7,7 @@ import { DashBoardService } from '../../services/dashboard.service';
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
-export class DashboardPage implements OnInit {
+export class DashboardPage {
   list: IDashBoard[] = [];
   constructor(private dashBoardService: DashBoardService) { }
 
